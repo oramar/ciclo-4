@@ -85,10 +85,14 @@ WSGI_APPLICATION = 'auth_ms.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+ 'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'd2is51u2grgrc9',
+    'USER': 'vwalxzprtrsrgo',
+    'PASSWORD': 'e4c5f704b7487fa1f224c9ac709cc46bf13defacc613183b4464ef6fd1c79c30',
+    'HOST': 'ec2-44-198-236-169.compute-1.amazonaws.com',
+    'PORT': '5432',
+ }
 }
 
 
@@ -142,4 +146,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     )
 }
+
+# Heroku
+import django_heroku
+django_heroku.settings(locals())
+
 
